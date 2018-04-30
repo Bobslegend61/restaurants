@@ -1,7 +1,10 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import "./Navbar.css";
-import { AppBar, Toolbar, Typography, Button, IconButton, Dialog } from "material-ui";
+import { AppBar, Toolbar, Typography, Button, IconButton, Dialog, Avatar } from "material-ui";
 import Slide from "material-ui/transitions/Slide";
+import AccountCircle from "@material-ui/icons/AccountCircle";
+import PageviewIcon from '@material-ui/icons/Pageview';
+import AssignmentIcon from '@material-ui/icons/Assignment';
 import MenuIcon from '@material-ui/icons/Menu';
 import CloseIcon from "@material-ui/icons/Close";
 
@@ -26,6 +29,16 @@ const styles = {
         backgroundImage: `url(${require("../../images/background_blur.jpeg")})`,
         backgroundPosition: "center center",
         backgroundSize: "cover"
+    },
+    folder: {
+        margin: "2px",
+        backgroundColor: "red",
+        color: "#fff"
+    },
+    Ass: {
+        margin: "2px",
+        color: "green",
+        backgroundColor: "#fff",
     }
 }
 
@@ -34,8 +47,28 @@ function Transition(props) {
 }
 
 class Navbar extends Component {
-    state = {
-        open: false
+    constructor(props) {
+        super(props);
+        this.state = {
+            open: false,
+            typo: ""
+        }
+    }
+
+    componentWillMount() {
+        let check;
+        switch(this.props.location.pathname) {
+            case "/":
+                check = "Restaurants";
+                break;
+            case "/search":
+                check = "Search";
+                break;
+
+        }
+        this.setState({
+            typo: check
+        })
     }
 
     handleClickOpen = () => {
@@ -55,12 +88,19 @@ class Navbar extends Component {
                         <MenuIcon />
                     </IconButton>
                     <Typography variant="title" color="inherit" style= { styles.flex }>
-                        Resturants
+                        { this.state.typo }
                     </Typography>
                     <div style={{ flex: 1 }}>
                     <img src={ require("../../images/logo3.jpeg") } alt="logo" style={{ height: "50%", width: "7%" }}/>
                     </div>
-                    <Button onClick={this.handleClickOpen} style={{ color: "#CA4121" }}>Create</Button>
+                    {
+                        this.props.location.pathname == "/" ? (<Button onClick={this.handleClickOpen} style={{ color: "#CA4121" }}>Create</Button>) : (
+                        <Fragment>
+                            <Avatar style={ styles.Ass }><AssignmentIcon /></Avatar>
+                            <Avatar style={ styles.folder }><PageviewIcon /></Avatar>
+                        </Fragment>
+                        )
+                    }
                 </Toolbar>
             </AppBar>
             <Dialog

@@ -1,20 +1,29 @@
+.Showcase {
+    background-color: #E0E0E0;
+}
+
 .Showcase .grid {
     padding: 20px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     background-color: "red";
-    grid-gap: 5px;
+    grid-gap: 8px;
     color: "#BD4A25";
+    width: 20%;
+    margin: auto;
 }
 
 .Showcase .grid button {
     border: none;
-    background-color: #fff;
-    text-transform: uppercase;
+    background-color: transparent;
+    text-transform: capitalize;
     font-size: 12px;
     padding: 6px;
+    color: rgba(210, 74, 42, 1);
+    font-weight: 700;
 }
 
 .Showcase .grid button:first-child {
-    box-shadow: 3px 3px 3px "#BD4A25";
+    box-shadow: 0px 0px 5px rgba(224, 109, 56, 1);
+    border-radius: 50px;
 }

@@ -1,4 +1,78 @@
 .Search {
-    position: relative;
-    top: 300px
+   background-color: #E0E0E0;
+   padding: 15px 0 0 0;
 }
+
+.Search .search-field {
+    margin: auto;
+    width: 60%;
+    position: relative;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.Search input {
+    height: 55px;
+    width: 100%;
+    font-size: 30px;
+    padding: 0 0 0 60px;
+    border: none;
+    background-color: transparent;
+    box-shadow: 0 1px gray;
+}
+
+.Search .search, .Search .times {
+    position: absolute;
+    color: #D24A2A
+}
+
+
+.Search .search {
+    top: 12px;
+    left: 5px;
+}
+
+.Search .times {
+    top: 12px;
+    right: 5px;
+}
+
+.Search .icons {
+    background: #fff;
+    text-align: center;
+    padding-top: 10px;
+    color: #CA4121;
+    padding-bottom: 10px;
+}
+
+.Search h4 {
+    margin: 10px 0;
+}
+
+.Search .icons .icons-grid {
+    padding-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    width: 60%;
+    margin: auto;
+    grid-column-gap: 150px;
+    grid-row-gap: 10px;
+}
+
+.Search .icons .icons-grid div.icon-div {
+    border-radius: 50%;
+    box-shadow: 0 0 3px #CA4121;
+    text-align: center;
+    width: 100%;
+    padding: 60px 0;
+}
+
+.Search .icons .icons-grid div:first-child div.icon-div {
+    background: #CA4121;
+    color: #fff;
+}
+
+.Search .icons .icons-grid p {
+    font-size: 14px;
+}
+

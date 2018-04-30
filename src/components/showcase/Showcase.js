@@ -26,35 +26,33 @@ class ShowcasePage extends Component {
         let imageListContent
         if(this.state.restaurants) {
             imageListContent = (
-                <Fragment>
-                    <div className="grid">
-                        <button><strong>A - z</strong></button>
-                        <button>Featured</button>
-                        <button>Rating</button>
-                    </div>
-                    <GridList cols={2} cellHeight={400}>
-                        { this.state.restaurants.map((img, i) => (
-                            <GridListTile key={i}>
-                                <img src={img.largeImageURL} alt={img.id} />
-                                <GridListTileBar
-                                    title={img.tags}
-                                    subtitle={<span>{img.views} views</span>}
-                                    actionIcon={
-                                        <Button style={{backgroundColor: "#fff", borderRadius: "50px", fontSize: "10px", marginRight: "5px", minHeight: "3px", color: "#D24A2A"}}>
-                                            following
-                                        </Button>
-                                    }
-                                />
-                            </GridListTile>
-                        )) }
-                    </GridList>
-                </Fragment>
+                <GridList cols={2} cellHeight={400}>
+                    { this.state.restaurants.map((img, i) => (
+                        <GridListTile key={i}>
+                            <img src={img.largeImageURL} alt={img.id} />
+                            <GridListTileBar
+                                title={img.tags}
+                                subtitle={<span>{img.views} views</span>}
+                                actionIcon={
+                                    <Button style={{backgroundColor: "#fff", borderRadius: "50px", fontSize: "10px", marginRight: "5px", minHeight: "3px", color: "#D24A2A"}}>
+                                        following
+                                    </Button>
+                                }
+                            />
+                        </GridListTile>
+                    )) }
+                </GridList>
             );
         }else {
             imageListContent = null;
         }
         return (
         <div className="Showcase">
+            <div className="grid">
+                <button><strong>A - z</strong></button>
+                <button>Featured</button>
+                <button>Rating</button>
+            </div>
             { imageListContent }
         </div>
         )
