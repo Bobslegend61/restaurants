@@ -18,7 +18,6 @@ class HomePage extends Component {
             this.setState({
                 corausel: res.data.hits
             });
-            console.log(res);
         }).catch(err => console.error(err))
     }
 
@@ -44,11 +43,37 @@ class HomePage extends Component {
             carousel = null;
         }
         return (
-            <div>
+            <div className="HomePage">
                 <div className="slider">
                     <Carousel {...settings}>
                         { carousel }
                     </Carousel>
+                </div>
+                <div className="search">
+                    <div className="search-field">
+                        <div className="icon-search"><i className="fas fa-search"></i></div>
+                        <input type="search" placeholder="search"/>
+                    </div>
+                    <div className="icons-grid">
+                        <div>
+                            <div className="icon-div">
+                                <i className={'fas fa-heart fa-2x'}></i>
+                            </div>
+                            <p>FAVOURITES</p>
+                       </div>
+                        <div>
+                            <div className="icon-div">
+                                <i className={'fas fa-briefcase fa-2x'}></i>
+                            </div>
+                            <p>OFFERS</p>
+                       </div>
+                        <div>
+                            <div className="icon-div">
+                                <i className={'fas fa-utensils fa-2x'}></i>
+                            </div>
+                            <p>RESERVATIONS</p>
+                       </div>
+                    </div>
                 </div>
             </div>
         );

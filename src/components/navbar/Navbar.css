@@ -49,3 +49,10 @@
     color: rgba(255, 255, 255, .5);
     font-size: 10px;
 }
+
+a {
+    display: block;
+    margin: 10px 0;
+    text-decoration: none;
+    color: #D24A2A;
+}

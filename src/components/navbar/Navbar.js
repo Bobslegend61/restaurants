@@ -1,12 +1,12 @@
 import React, { Component, Fragment } from 'react';
 import "./Navbar.css";
-import { AppBar, Toolbar, Typography, Button, IconButton, Dialog, Avatar } from "material-ui";
+import { AppBar, Toolbar, Typography, Button, IconButton, Dialog, Avatar, Drawer, List } from "material-ui";
 import Slide from "material-ui/transitions/Slide";
-import AccountCircle from "@material-ui/icons/AccountCircle";
 import PageviewIcon from '@material-ui/icons/Pageview';
 import AssignmentIcon from '@material-ui/icons/Assignment';
 import MenuIcon from '@material-ui/icons/Menu';
 import CloseIcon from "@material-ui/icons/Close";
+import { Link } from "react-router-dom";
 
 const styles = {
     root: {
@@ -51,7 +51,8 @@ class Navbar extends Component {
         super(props);
         this.state = {
             open: false,
-            typo: ""
+            typo: "",
+            drawer: false
         }
     }
 
@@ -64,10 +65,17 @@ class Navbar extends Component {
             case "/search":
                 check = "Search";
                 break;
-
+            default:
+                check = ""
         }
         this.setState({
             typo: check
+        })
+    }
+
+    toggleDrawer = open => () => {
+        this.setState({
+            drawer: open
         })
     }
 
@@ -84,7 +92,7 @@ class Navbar extends Component {
         <div style= { styles.root }>
             <AppBar style= { styles.colorDefault } position="static">
                 <Toolbar>
-                    <IconButton style= { styles.menuButton } aria-label="Menu">
+                    <IconButton style= { styles.menuButton } aria-label="Menu" onClick={ this.toggleDrawer(true) }>
                         <MenuIcon />
                     </IconButton>
                     <Typography variant="title" color="inherit" style= { styles.flex }>
@@ -94,7 +102,7 @@ class Navbar extends Component {
                     <img src={ require("../../images/logo3.jpeg") } alt="logo" style={{ height: "50%", width: "7%" }}/>
                     </div>
                     {
-                        this.props.location.pathname == "/" ? (<Button onClick={this.handleClickOpen} style={{ color: "#CA4121" }}>Create</Button>) : (
+                        this.props.location.pathname === "/" ? (<Button onClick={this.handleClickOpen} style={{ color: "#CA4121" }}>Create</Button>) : (
                         <Fragment>
                             <Avatar style={ styles.Ass }><AssignmentIcon /></Avatar>
                             <Avatar style={ styles.folder }><PageviewIcon /></Avatar>
@@ -161,6 +169,22 @@ class Navbar extends Component {
                     </div>
                 </div>
             </Dialog>
+            <Drawer anchor="left" open={this.state.drawer} onClose={this.toggleDrawer(false)}>
+                <div
+                    tabIndex={0}
+                    role="button"
+                    onClick={this.toggleDrawer(false)}
+                    onKeyDown={this.toggleDrawer(false)}
+                >
+                    <List style={{ width: 250, padding: "30px 20px" }}>
+                        <Link to="/">Home</Link>
+                        <Link to="/showcase">Showcase</Link>
+                        <Link to="/login">Login</Link>
+                        <Link to="/recover">Recover Password</Link>
+                        <Link to="/search">Search</Link>
+                    </List>
+                </div>
+            </Drawer>
         </div>
         )
     }

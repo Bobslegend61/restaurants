@@ -2,6 +2,55 @@
     height: 37vh;
 }
 
+.HomePage .search .search-field {
+    width: 60%;
+    margin: auto;
+    text-align: center;
+    padding-top: 40px;
+    color: #CA4121;
+    position: relative;
+}
+
+.HomePage .search input {
+    height: 50px;
+    width: 60%;
+    font-size: 18px;
+    padding: 0 0 0 60px;
+    border: none;
+    background-color: transparent;
+    box-shadow: 0 1px rgba(202, 65, 33, 1);
+}
+
+.HomePage .search .icon-search {
+    position: absolute;
+    top: 55px;
+    left: 190px;
+}
+
+.HomePage .search .icons-grid {
+    padding: 60px 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    width: 60%;
+    margin: auto;
+    grid-column-gap: 150px;
+    grid-row-gap: 10px;
+    text-align: center;
+    color: #CA4121;
+}
+
+.HomePage .search .icons-grid div.icon-div {
+    border-radius: 50%;
+    box-shadow: 0 0 3px #CA4121;
+    text-align: center;
+    width: 100%;
+    padding: 60px 0;
+}
+
+.HomePage .search .icons-grid p {
+    font-size: 14px;
+}
+
 @media(min-width: 800px) {
     .slider {
         height: 60vh;
@@ -10,3 +59,4 @@
         background-size: cover;
     }
 }
+

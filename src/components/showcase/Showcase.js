@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import "./Showcase.css"
 import axios from "axios";
 import GridList, { GridListTile, GridListTileBar } from 'material-ui/GridList';
