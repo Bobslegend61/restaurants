@@ -1,0 +1,12 @@
+.slider {
+    height: 37vh;
+}
+
+@media(min-width: 800px) {
+    .slider {
+        height: 60vh;
+    }
+    .slide img {
+        background-size: cover;
+    }
+}

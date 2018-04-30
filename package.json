@@ -1,0 +1,28 @@
+{
+  "name": "resturants",
+  "version": "0.1.0",
+  "private": true,
+  "homepage": "http://Bobslegend61.github.io/restaurants",
+  "dependencies": {
+    "@material-ui/icons": "^1.0.0-beta.43",
+    "axios": "^0.18.0",
+    "material-ui": "^1.0.0-beta.43",
+    "react": "^16.3.2",
+    "react-dom": "^16.3.2",
+    "react-responsive-carousel": "^3.1.37",
+    "react-router-dom": "^4.2.2",
+    "react-scripts": "1.1.4",
+    "typeface-roboto": "0.0.54"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
+  },
+  "devDependencies": {
+    "gh-pages": "^1.1.0"
+  }
+}

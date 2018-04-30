@@ -1,0 +1,51 @@
+.Nav .container {
+    width: 30%;
+    margin: auto;
+    color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.Nav h2 {
+    letter-spacing: 3px;
+}
+
+.Nav input {
+    height: 35px;
+    padding-left: 30px;
+    background: rgba(172, 166, 166, .3);
+    border: none;
+    border-radius: 50px 50px 50px 50px;
+    width: 50%;
+    color: rgba(255, 255, 255, .5)!important;
+}
+
+.Nav .input-field {
+    position: relative;
+    margin: 20px 0;
+}
+
+.Nav .input-field span {
+  position: absolute;
+  top: 8px;
+  margin-left: 10px;
+  color: rgba(255, 255, 255, .5);
+}
+
+
+.Nav .btn {
+    text-align: center;
+    background-color: #619400;
+    padding: 0;
+    color: #fff;
+    font-size: 10px;
+    width: 59%;
+}
+
+.Nav p {
+    color: rgba(255, 255, 255, .5);
+    font-size: 10px;
+}
