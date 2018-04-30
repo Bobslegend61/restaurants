@@ -1,8 +1,8 @@
 import React, { Component, Fragment } from 'react';
+import "./Showcase.css"
 import axios from "axios";
 import GridList, { GridListTile, GridListTileBar } from 'material-ui/GridList';
 import Button from 'material-ui/Button';
-import InfoIcon from '@material-ui/icons/Info';
 
 class ShowcasePage extends Component {
     constructor(props) {
@@ -32,7 +32,7 @@ class ShowcasePage extends Component {
                         <button>Featured</button>
                         <button>Rating</button>
                     </div>
-                    <GridList cols={2} cellHeight={400} style={{ marginTop: "10px" }}>
+                    <GridList cols={2} cellHeight={400}>
                         { this.state.restaurants.map((img, i) => (
                             <GridListTile key={i}>
                                 <img src={img.largeImageURL} alt={img.id} />

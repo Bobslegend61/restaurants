@@ -49,7 +49,7 @@ class Navbar extends Component {
     render() {
         return (
         <div style= { styles.root }>
-            <AppBar style= { styles.colorDefault }>
+            <AppBar style= { styles.colorDefault } position="static">
                 <Toolbar>
                     <IconButton style= { styles.menuButton } aria-label="Menu">
                         <MenuIcon />
